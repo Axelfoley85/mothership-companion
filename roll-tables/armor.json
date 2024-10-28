@@ -1,80 +1,61 @@
 [
-    {
-      "name": "Standard Crew Attire",
-      "type": "armor",
-      "cost": 100,
-      "speed": "None",
-      "special": "Normal",
-      "description": "Basic clothing."
-    },
-    {
-      "name": "Vaccsuit",
-      "type": "armor",
-      "cost": 10000,
-      "speed": "None",
-      "special": "Normal",
-      "description": "Designed for outer space operations.",
-      "details": {
-        "duration": "12 hrs",
-        "features": [
-          "Includes short-range comms",
-          "headlamp",
-          "radiation shielding"
-        ],
-        "note": "Decompression within 1d5 rounds if punctured."
-      }
-    },
-    {
-      "name": "Hazard Suit",
-      "type": "armor",
-      "cost": 4000,
-      "speed": "None",
-      "special": "Normal",
-      "description": "Environmental protection while exploring unknown planets.",
-      "details": {
-        "duration": "1 hr",
-        "features": [
-          "Includes air filter",
-          "extreme heat/cold protection",
-          "hydration reclamation (1L of water lasts 4 days)",
-          "short-range comms",
-          "headlamp",
-          "radiation shielding"
-        ]
-      }
-    },
-    {
-      "name": "Standard Battle Dress",
-      "type": "armor",
-      "cost": 2000,
-      "speed": "None",
-      "special": "Normal",
-      "description": "Lightly-plated armor worn by most marines.",
-      "details": {
-        "features": [
-          "Includes short-range comms"
-        ]
-      }
-    },
-    {
-      "name": "Advanced Battle Dress",
-      "type": "armor",
-      "cost": 12000,
-      "speed": "None",
-      "special": "Normal",
-      "description": "Heavy armor for marines deployed in high combat offworld engagements.",
-      "details": {
-        "duration": "1 hr",
-        "features": [
-          "Includes short-range comms",
-          "body cam",
-          "headlamp",
-          "HUD",
-          "exoskeletal weave (Strength Checks [+])",
-          "radiation shielding"
-        ],
-        "damageReduction": 3
-      }
-    }
-  ]
-  
+  {
+    "name": "Standard Crew Attire",
+    "cost": 100,
+    "armor points": 1,
+    "speed-modifier": "none"
+  },
+  {
+    "name": "Vaccsuit",
+    "cost": 10000,
+    "armor points": 3,
+    "speed-modifier": "disadvantage",
+    "oxygen": "12 hrs",
+    "special": [
+        "Includes short-range comms",
+        "headlamp",
+        "radiation shielding",
+        "Decompression within 1d5 rounds if punctured."
+    ]
+  },
+  {
+    "name": "Hazard Suit",
+    "cost": 4000,
+    "armor points": 5,
+    "speed-modifier": "none",
+    "oxygen": "1 hr",
+    "special": [
+        "Includes air filter",
+        "extreme heat/cold protection",
+        "hydration reclamation (1L of water lasts 4 days)",
+        "short-range comms",
+        "headlamp",
+        "radiation shielding"
+    ]
+  },
+  {
+    "name": "Standard Battle Dress",
+    "cost": 2000,
+    "armor points": 7,
+    "speed-modifier": "none",
+    "special": [
+        "Includes short-range comms"
+    ]
+  },
+  {
+    "name": "Advanced Battle Dress",
+    "cost": 12000,
+    "armor points": 10,
+    "speed-modifier": "disadvantage",
+    "oxygen": "1 hr",
+    "special": [
+        "Includes short-range comms",
+        "body cam",
+        "headlamp",
+        "HUD",
+        "exoskeletal weave (Strength Checks [+])",
+        "radiation shielding",
+        "damageReduction: 3"
+    ]
+  }
+]
