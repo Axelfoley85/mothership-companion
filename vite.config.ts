@@ -13,6 +13,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
     tailwindcss(),
+    autoprefixer(),
   ],
   resolve: {
     alias: {
