@@ -1,35 +1,108 @@
 @import './base.css';
 @import "tailwindcss";
 
-#app {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+@page {
+    size: A4 portrait;
+    margin: 0;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+textarea {
+    resize: none;
+    padding: 0.2rem;
+    line-height: 1.2;
+    width: 99%;
+    overflow: hidden;
+}
+textarea:focus, textarea:hover {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.labeled-input-container {
+    background-color: var(--color-panel);
+    color: var(--color-text);
+    border: var(--container-border-line-width) solid var(--color-border);
+    width: 100%;
+    max-height: 2rem;
+    font-family: inherit;
+    resize: none;
+    color: var(--color-heading);
+}
+.labeled-input-container:focus,
+.labeled-input-container:hover {
+    border-color: var(--color-panel-glow);
+    box-shadow: 0 0 0 var(--box-shadow-width) var(--color-accent-soft);
 }
 
-@media (min-width: 1024px) {
-  body {
-    place-items: center;
-  }
+.input-label {
+    font-size: 0.6rem;
+    padding: 0 0.25rem;
+}
 
-  #app {
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr; */
-    padding: 2rem 2rem;
-  }
+.one-liner-input {
+  width: 70%;
+  padding-left: 1rem;
+  padding-right: 0rem;
+}
+.one-liner-input:focus, .one-liner-input:hover {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.unlabeled-input {
+    background-color: var(--color-panel);
+    color: var(--color-text);
+    font-family: inherit;
+    resize: none;
+}
+
+.skill-field-container {
+    min-height: 10rem !important;
+    padding: 0.2rem;
+}
+.skill-textarea {
+    min-height: 8rem !important;
+}
+
+.equipment-field-container {
+    --equipment-min-height: 20rem;
+    min-height: var(--equipment-min-height) !important;
+}
+.equipment-textarea {
+    min-height: calc(var(--equipment-min-height) - 2rem) !important;
+}
+
+.weapons-field-container {
+    --weapon-min-height: 12rem;
+    min-height: var(--weapon-min-height) !important;
+}
+.weapons-textarea {
+    min-height: calc(var(--weapon-min-height) - 2rem) !important;
+}
+
+p {
+    color: var(--color-heading);
+}
+
+.stats-container {
+    background-color: var(--color-panel);
+    border: var(--container-border-line-width) solid var(--color-border);
+    padding: calc(var(--spacing) * 2);
+    border-radius: var(--container-border-radius);
+}
+
+.stat-input {
+    width: 4rem;
+    height: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--color-bg);
+}
+.stat-input:hover, .stat-input:focus {
+    outline: none;
+    border-color: var(--color-border-highlight);
+    box-shadow: 0 0 0 var(--box-shadow-width) var(--color-accent-soft);
+}
+.vitals-field {
+    width: 6rem ;
 }

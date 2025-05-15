@@ -1,87 +1,105 @@
+<!-- Charactersheet design for mothership RPG -->
 <template>
-    <div class="grid grid-cols-2 gap-2">
-        <div class="max-w-2xl mx-auto p-4 grid gap-2 text-white font-mono">
-            <h1 class="text-3xl font-bold text-center uppercase">Mothership Character</h1>
-            <input v-model="character.player" placeholder="Player Name" />
-            <input v-model="character.name" placeholder="Character Name" />
-            <input v-model="character.class" placeholder="Class" />
-            <input v-model.number="character.hp" placeholder="HP" />
-            <textarea v-model="character.equipment" placeholder="Equipment" />
-            <input v-model.number="character.credits" placeholder="Credits" />
-        </div>
-        <div class="max-w-2xl mx-auto p-4 grid gap-2 text-white font-mono">
-            <div class="grid grid-cols-4 gap-1">
-                <input v-model.number="character.strength" placeholder="Strength" />
-                <input v-model.number="character.speed" placeholder="Speed" />
-                <input v-model.number="character.intellect" placeholder="Intellect" />
-                <input v-model.number="character.combat" placeholder="Combat" />
-            </div>
+    <div class="a4-frame max-w-[210mm] mx-auto p-2 font-mono">
+        <div class="grid grid-cols-2 gap-3">
+            <div class="grid gap-2">
+                <div>
+                    <p class="text-4xl font-bold text-center uppercase">Mothership</p>
+                    <p class="text-2xl font-bold text-center uppercase">Character Sheet</p>
+                </div>
+                <div class="labeled-input-container">
+                    <label class="input-label">Player</label>
+                    <input class="one-liner-input" v-model="character.player" />
+                </div>
+                <div class="labeled-input-container">
+                    <label class="input-label">Character Name</label>
+                    <input class="one-liner-input" v-model="character.name" />
+                </div>
+                <div class="labeled-input-container">
+                    <label class="input-label">Class</label>
+                    <input class="one-liner-input" v-model="character.class" />
+                </div>
 
-            <div class="border border-zinc-300 rounded-2xl p-1">
-                <p class="text-center">Saves</p>
-                <div class="grid grid-cols-3 gap-1">
-                    <input v-model.number="character.sanity" placeholder="Sanity" />
-                    <input v-model.number="character.fear" placeholder="Fear" />
-                    <input v-model.number="character.body" placeholder="Body" />
-                    <p class="text-center">Sanity</p>
-                    <p class="text-center">Fear</p>
-                    <p class="text-center">Body</p>
+                <div class="labeled-input-container skill-field-container">
+                    <label class="input-label">Skills</label>
+                    <textarea class="skill-textarea" v-model="character.skills" />
+                </div>
+                <div class="labeled-input-container equipment-field-container">
+                    <label class="input-label">Equipment</label>
+                    <textarea class="equipment-textarea" v-model="character.equipment" />
                 </div>
             </div>
-            <textarea v-model="character.skills" placeholder="Skills" />
-            <input v-model.number="character.armor" placeholder="Armor Points" />
+
+            <div class="grid gap-2">
+                <div class="stats-container">
+                    <!-- STATS -->
+                    <p class="text-center">STATS</p>
+                    <div class="grid grid-cols-4 justify-items-center">
+                        <!-- LABELS -->
+                        <p class="text-center">Strength</p>
+                        <p class="text-center">Speed</p>
+                        <p class="text-center">Intellect</p>
+                        <p class="text-center">Combat</p>
+                        <input class="unlabeled-input stat-input" v-model.number="character.strength" />
+                        <input class="unlabeled-input stat-input" v-model.number="character.speed" />
+                        <input class="unlabeled-input stat-input" v-model.number="character.intellect" />
+                        <input class="unlabeled-input stat-input" v-model.number="character.combat" />
+                    </div>
+                </div>
+
+                <!-- SAVES -->
+                <div class="stats-container">
+                    <p class="text-center">SAVING ROLLS</p>
+                    <div class="grid grid-cols-3 justify-items-center">
+                        <!-- LABELS -->
+                        <p class="text-center">Sanity</p>
+                        <p class="text-center">Fear</p>
+                        <p class="text-center">Body</p>
+                        <input class="unlabeled-input stat-input" v-model.number="character.sanity" />
+                        <input class="unlabeled-input stat-input" v-model.number="character.fear" />
+                        <input class="unlabeled-input stat-input" v-model.number="character.body" />
+                    </div>
+                </div>
+
+                <div class="stats-container">
+                    <p class="text-center">VITALS MONITORING</p>
+                    <div class="grid grid-cols-3 justify-items-center">
+                        <p class="text-center">Health</p>
+                        <p class="text-center">Wounds</p>
+                        <p class="text-center">Stress</p>
+                        <input class="unlabeled-input stat-input vitals-field" v-model.number="character.hp" />
+                        <input class="unlabeled-input stat-input vitals-field" v-model.number="character.wounds" />
+                        <input class="unlabeled-input stat-input vitals-field" v-model.number="character.stress" />
+                        <div v-for="i in 3" :key="i" class="text-[8px]">
+                            <p class="text-center whitespace-nowrap">Current/Max</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 justify-items-center stats-container">
+                    <div>
+                        <p class="text-center">ARMOR POINTS</p>
+                        <input class="unlabeled-input stat-input" v-model.number="character.armor" />
+                    </div>
+                    <div>
+                        <p class="text-center">Credits</p>
+                        <input class="unlabeled-input stat-input" v-model.number="character.credits" />
+                    </div>
+                </div>
+
+
+                <div class="labeled-input-container weapons-field-container">
+                    <label class="input-label">Weapons</label>
+                    <textarea class="weapons-textarea" v-model="character.weapons" />
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { useCharacterStore } from '@/stores/character'
 
-interface CharacterData {
-    player: string
-    name: string
-    class: string
-    strength: number
-    speed: number
-    intellect: number
-    combat: number
-    hp: number
-    sanity: number
-    fear: number
-    body: number
-    armor: number
-    credits: number
-    skills: string
-    equipment: string
-}
-
-const character = reactive<CharacterData>({
-    player: '',
-    name: '',
-    class: '',
-    strength: 0,
-    speed: 0,
-    intellect: 0,
-    combat: 0,
-    hp: 0,
-    sanity: 0,
-    fear: 0,
-    body: 0,
-    armor: 0,
-    credits: 0,
-    skills: '',
-    equipment: '',
-})
+const character = useCharacterStore()
 </script>
-
-<style scoped>
-    @reference "../assets/main.css";
-
-    textarea {
-    @apply w-full p-2 bg-zinc-800 border border-zinc-700 rounded-xl;
-    }
-
-    input {
-        @apply w-full p-2 bg-zinc-800 border border-zinc-700 rounded-xl;
-    }
-</style>

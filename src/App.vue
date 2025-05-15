@@ -4,15 +4,6 @@ import CharacterSheet from './components/CharacterSheet.vue';
 
 <template>
     <header>
-        <div class="min-h-screen items-center justify-center">
-            <CharacterSheet/>
-        </div>
+        <CharacterSheet/>
     </header>
 </template>
-
-<style scoped>
-header {
-    /* max-height: 95vh; */
-}
-
-</style>
