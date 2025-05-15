@@ -90,6 +90,9 @@ p {
     padding: calc(var(--spacing) * 2);
     border-radius: var(--container-border-radius);
 }
+.stats-container:hover {
+    background-color: var(--color-panel-glow);
+}
 
 .stat-input {
     width: 4rem;

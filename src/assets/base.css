@@ -1,12 +1,12 @@
 :root {
   /* Light deck plating */
-  --color-bg: #ffffff; /* off-white steel */
+  --color-bg: #916464; /* off-white steel */
 
-  --color-panel: #9fbce0; /* brushed chrome */
-  --color-panel-glow: #aebecd; /* mild sheen */
+  --color-panel: #67e37a; /* brushed chrome */
+  --color-panel-glow: #17dc45; /* mild sheen */
 
   --color-border: #0012b4; /* steel rivets */
-  --color-border-highlight: #64748b; /* darker panel edges */
+  --color-border-highlight: #006aff; /* darker panel edges */
 
   /* Text */
   --color-text: #1e293b; /* navy steel */
