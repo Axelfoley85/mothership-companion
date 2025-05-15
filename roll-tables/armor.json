@@ -1,61 +1,61 @@
 [
-  {
-    "name": "Standard Crew Attire",
-    "cost": 100,
-    "armor points": 1,
-    "speed-modifier": "none"
-  },
-  {
-    "name": "Vaccsuit",
-    "cost": 10000,
-    "armor points": 3,
-    "speed-modifier": "disadvantage",
-    "oxygen": "12 hrs",
-    "special": [
-        "Includes short-range comms",
-        "headlamp",
-        "radiation shielding",
-        "Decompression within 1d5 rounds if punctured."
-    ]
-  },
-  {
-    "name": "Hazard Suit",
-    "cost": 4000,
-    "armor points": 5,
-    "speed-modifier": "none",
-    "oxygen": "1 hr",
-    "special": [
-        "Includes air filter",
-        "extreme heat/cold protection",
-        "hydration reclamation (1L of water lasts 4 days)",
-        "short-range comms",
-        "headlamp",
-        "radiation shielding"
-    ]
-  },
-  {
-    "name": "Standard Battle Dress",
-    "cost": 2000,
-    "armor points": 7,
-    "speed-modifier": "none",
-    "special": [
-        "Includes short-range comms"
-    ]
-  },
-  {
-    "name": "Advanced Battle Dress",
-    "cost": 12000,
-    "armor points": 10,
-    "speed-modifier": "disadvantage",
-    "oxygen": "1 hr",
-    "special": [
-        "Includes short-range comms",
-        "body cam",
-        "headlamp",
-        "HUD",
-        "exoskeletal weave (Strength Checks [+])",
-        "radiation shielding",
-        "damageReduction: 3"
-    ]
-  }
+    {
+        "name": "Standard Crew Attire",
+        "cost": 100,
+        "armor points": 1,
+        "speed-modifier": "none"
+    },
+    {
+        "name": "Vaccsuit",
+        "cost": 10000,
+        "armor points": 3,
+        "speed-modifier": "disadvantage",
+        "oxygen": "12 hrs",
+        "special": [
+            "Includes short-range comms",
+            "headlamp",
+            "radiation shielding",
+            "Decompression within 1d5 rounds if punctured."
+        ]
+    },
+    {
+        "name": "Hazard Suit",
+        "cost": 4000,
+        "armor points": 5,
+        "speed-modifier": "none",
+        "oxygen": "1 hr",
+        "special": [
+            "Includes air filter",
+            "extreme heat/cold protection",
+            "hydration reclamation (1L of water lasts 4 days)",
+            "short-range comms",
+            "headlamp",
+            "radiation shielding"
+        ]
+    },
+    {
+        "name": "Standard Battle Dress",
+        "cost": 2000,
+        "armor points": 7,
+        "speed-modifier": "none",
+        "special": [
+            "Includes short-range comms"
+        ]
+    },
+    {
+        "name": "Advanced Battle Dress",
+        "cost": 12000,
+        "armor points": 10,
+        "speed-modifier": "disadvantage",
+        "oxygen": "1 hr",
+        "special": [
+            "Includes short-range comms",
+            "body cam",
+            "headlamp",
+            "HUD",
+            "exoskeletal weave (Strength Checks [+])",
+            "radiation shielding",
+            "damage reduction: 3"
+        ]
+    }
 ]
